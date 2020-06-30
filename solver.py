@@ -1,5 +1,6 @@
 # Sudoku solver
 import numpy as np
+import turtle
 grid = [[0, 7, 6, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 8, 4, 0, 0, 0, 7],
         [4, 0, 9, 0, 0, 0, 0, 3, 0],
@@ -9,6 +10,52 @@ grid = [[0, 7, 6, 0, 0, 0, 0, 0, 0],
         [0, 4, 0, 0, 0, 0, 6, 0, 3],
         [5, 0, 0, 0, 7, 2, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 2, 5, 0]]
+
+wn = turtle.Screen()
+wn.title("Pong")
+wn.bgcolor("white")
+wn.setup(width=800, height=800)
+wn.tracer(0)
+
+
+# gridline vertical
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("black")
+paddle_a.shapesize(stretch_wid=100, stretch_len=0.5)
+paddle_a.penup()
+paddle_a.goto(-150, 0)
+
+# gridline vertical
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("black")
+paddle_a.shapesize(stretch_wid=100, stretch_len=0.5)
+paddle_a.penup()
+paddle_a.goto(150, 0)
+
+# gridline horizontal
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("black")
+paddle_a.shapesize(stretch_wid=0.5, stretch_len=100)
+paddle_a.penup()
+paddle_a.goto(0, -150)
+
+# gridline horizontal
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("black")
+paddle_a.shapesize(stretch_wid=0.5, stretch_len=100)
+paddle_a.penup()
+paddle_a.goto(0, 150)
+
+while True:
+    wn.update()
 
 
 def possible(y, x, n):
